@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Balloon</title>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("confetti.gif");
+        }
+        #balloon {
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: red;
+        }
+    </style>
+    <div id="balloon"></div>
+    <script>
+        const balloon = document.getElementById("balloon");
+        let size = 200; 
+        let degonflerInterval; 
+        let colors = ["#FF0000", "#00FF00", "#0000FF"]; 
+        let colorIndex = 0;
+
+        // Fonction pour gonfler le ballon (ajoute 10px à la taille)
+        function upSize() {
+            size += 10;
+            if (size > 420) {
+                size = 200;
+            }
+            balloon.style.height = size + "px";
+            balloon.style.width = size + "px";
+            balloon.style.backgroundColor = colors[colorIndex]; 
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+
+        // Fonction pour dégonfler le ballon (réduit la taille de 5px)
+        function downSize() {
+            if (size > 200) {
+                size -= 5;
+                balloon.style.height = size + "px";
+                balloon.style.width = size + "px";
+            }
+        }
+
+        // Fonction pour inverser l'ordre des couleurs
+        function reverseColors() {
+            return colors.slice().reverse(); // Crée un nouvel array avec les couleurs inversées
+        }
+
+        // Quand la souris quitte le ballon, commencer à dégonfler progressivement
+        balloon.addEventListener('mouseleave', function(){
+            if (!degonflerInterval) {
+                let reversedColors = reverseColors(); 
+                let reversedColorIndex = 0; 
+
+                degonflerInterval = setInterval(function() {
+                    if (balloon.style.height === "200px")
+                        return ;
+                    downSize();
+                    balloon.style.backgroundColor = reversedColors[reversedColorIndex]; 
+                    reversedColorIndex = (reversedColorIndex + 1) % reversedColors.length; 
+                }, 100);
+            } 
+        });
+        // Quand la souris entre dans le ballon, on arrête le dégonflement et on rétablit la taille
+        balloon.addEventListener('mouseenter', function() {
+            clearInterval(degonflerInterval);
+            degonflerInterval = null; 
+            balloon.style.backgroundColor = colors[colorIndex]; 
+        });
+        // Change la couleur du ballon au clic
+        balloon.addEventListener('click', () => {
+            upSize();
+        });
+    </script>
+</body>
+</html>

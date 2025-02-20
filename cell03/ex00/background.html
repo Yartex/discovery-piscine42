@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="background.css">
+    <meta charset="utf-8">
+    <title>Background</title>
+</head>
+<body>
+    <button id="btn">Click me to change the background color!</button>
+    <script>
+        const btn = document.querySelector("#btn");
+        function generateColor(){
+            /*creation de la constante hexa*/
+            const hexArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+            let code = "";
+            /*creation code hexa de la couleur*/
+            for(let i=0; i<6; i++){
+                code += hexArray[Math.floor(Math.random()*16)]
+            }
+            return `#${code}`
+        }
+        /*"condition" changement background quand boutton presser*/
+        btn.addEventListener('click', () => {
+            document.body.style.backgroundColor = generateColor();
+        });
+    </script>
+</body>

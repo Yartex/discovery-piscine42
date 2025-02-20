@@ -1,0 +1,46 @@
+body{
+    background-color: darksalmon;
+}
+
+.menu .categorie{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.menu .categorie ul{
+    display: none;
+    list-style: none;
+}
+
+.menu .categorie:hover ul {
+	display: block;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+}
+
+h1 {
+    display: flex;
+    padding-left: 20px;
+}
+.text {
+    vertical-align: baseline;
+}
+
+.ingr{
+    padding-right: 30px;
+}
+
+.table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sncf {
+    margin-left: 10px;
+    margin-right: 10px;
+}
