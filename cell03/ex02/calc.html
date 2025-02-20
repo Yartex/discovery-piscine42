@@ -5,12 +5,101 @@
     <link rel="icon" type="image" href="calculatrice.png">
 </head>
 <body>
-    <style>
-
-    </style>
-    <input type="text">
-    
+    <input id="number1" type="text">
+    <select name="operator" id="operator">
+        <option value="">-- Please select an operator --</option>
+        <option id="add" value="+">+</option>
+        <option id="sous" value="-">-</option>
+        <option id="mult" value="*">*</option>
+        <option id="div" value="/">/</option>
+        <option id="mod" value="%">%</option>
+    </select>
+    <input id="number2" type="text">
+    <input  id="button" type="submit" value="Try me !">
     <script>
-
+        /*Timer et Alerte AFK*/
+        let timer;
+        function resetTimer() {
+        /*Annule l'alerte precedente (si une alerte etait en attente)*/
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            alert("Please use me...");
+        }, 30000);
+        }
+        /*evenements d'activite de l'utilisateur*/
+        window.addEventListener('mousemove', resetTimer);
+        window.addEventListener('click', resetTimer);
+        window.addEventListener('keypress', resetTimer);
+        resetTimer();
+        /*Verification nombre possitif rentrer*/
+        function getValue(){
+            var input1 = document.getElementById("number1").value;
+            var input2 = document.getElementById("number2").value;
+            console.log(input1 + " " + input2);
+            if((input1 < 0) || (input2 < 0)){ // Verif positif
+                alert("Error :(");
+            }else if((Number.parseInt(input1) != Number.parseFloat(input1)) 
+                || ((Number.parseInt(input2) != Number.parseFloat(input2)))){ //verif Entier
+                alert("Error :( Float");
+            }
+        }
+        // verif div et modulo
+        function divModulo(){
+            var input1 = document.getElementById("number1").value;
+            var input2 = document.getElementById("number2").value;
+            var optiondiv = document.getElementById("div");
+            var optionmod = document.getElementById("mod");
+            var selector = document.getElementById("operator");
+            var choice = selector.options[selector.selectedIndex];
+            if ((choice == optiondiv) || (choice == optionmod)){
+                if((Number.parseInt(input1) == 0) || (Number.parseInt(input2) == 0)){
+                    alert("It's over 9000 !");
+                    console.log(alert);
+                    console.log(input1 + " " + input2);
+                }
+            }
+        }
+        //Le Calcule
+        function calc(){
+            var input1 = document.getElementById("number1").value;
+            var input2 = document.getElementById("number2").value;
+            var optionadd = document.getElementById("add");
+            var optionsous = document.getElementById("sous");
+            var optionmult = document.getElementById("mult");
+            var optiondiv = document.getElementById("div");
+            var optionmod = document.getElementById("mod");
+            var selector = document.getElementById("operator");
+            var choice = selector.options[selector.selectedIndex];
+            if (choice == optionadd) { //addition
+                result = Number.parseInt(input1) + Number.parseInt(input2);
+                alert(result);
+                console.log(alert);
+            }
+            if (choice == optionsous) { //soustraction
+                result = input1 - input2;
+                alert(result);
+                console.log(alert);
+            }
+            if (choice == optionmult) { //multiplication
+                result = input1 * input2;
+                alert(result);
+                console.log(alert);
+            }
+            if (choice == optiondiv) { //division
+                result = input1 / input2;
+                alert(result);
+                console.log(alert);
+            }
+            if (choice == optionmod) { //modulo
+                result = input1 % input2;
+                alert(result);
+                console.log(alert);
+            }
+        }
+        button.addEventListener('click', () => {
+            getValue();
+            divModulo();
+            calc();
+        });
     </script>
 </body>
