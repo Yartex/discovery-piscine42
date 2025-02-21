@@ -146,9 +146,8 @@ li {
 }
 
 .image {
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
+    width: 40%;
+    clip-path: ellipse(33% 50%);
 }
 
 #home {
