@@ -18,7 +18,8 @@ h1 {
     flex-direction: row;
     position: fixed;
     top: 5px;
-    z-index: 20;
+    z-index: 2000;
+    overflow: hidden;
 }
 
 #headerCV2{
@@ -26,42 +27,77 @@ h1 {
     flex-direction: row;
     position: fixed;
     top: 5px;
-    z-index: 20;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+#headerCV1 img{
+    position: relative; 
+    z-index: 5000;
+}
+
+#headerCV2 img {
+    position: relative;      
+    z-index: 5000;
 }
 
 /*Sommaire*/
 .sommaire {
     background-image: url(sommaire.jpg);
-    background-size: cover;         /* L'image de fond couvre toute la section */
-    background-position: center;    /* Centrer l'image de fond */
-    background-attachment: fixed;   /* L'image de fond reste fixe lors du défilement */
-    height: 100vh;                   /* La section prend 100% de la hauteur de la fenêtre */
+    background-size: cover;
+    background-position: center;  
+    background-attachment: fixed;  
+    height: 100vh;                 
     width: 100%;
     text-align: center;
-    display: flex;                  /* Utilisation de flexbox pour centrer le contenu */
-    flex-direction: column;         /* Aligner les éléments enfants en colonne */
-    justify-content: flex-start;    /* Centrer verticalement les éléments en haut */
-    align-items: center;            /* Centrer horizontalement */
+    display: flex;                 
+    flex-direction: column;        
+    justify-content: flex-start;  
+    align-items: center;           
     margin: 0;
 }
 
 #text  {
-    margin-top: 20px;
+    margin-top: 80px;
+    padding: 5px 30px;                                                
+    color: grey;                              
+    background-color: beige;               
+    border: none;                               
+    border-radius: 30px;                                                 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Style des boutons */
+button {
+    padding: 10px 30px;                       
+    font-size: 16px;                         
+    color: grey;                              
+    background-color: beige;               
+    border: none;                               
+    border-radius: 50px;                      
+    cursor: pointer;                           
+    transition: all 0.3s ease-in-out;         
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 20;
+}
 
-button{
-    display: inline-block;
-    margin: auto;
-    color: rgba(63, 63, 63, 0.87);
-    background-color: beige;
-    border-radius: 5px;
+button:hover {
+    background-color: beige;               
+    transform: translateY(-5px);             
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  
+}
+
+button:focus {
+    outline: none;  
+    background-color: beige; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .buttons-position {
     display: flex;
     justify-content: center;        
-    gap: 20px;                      /* Espacement entre les boutons */
+    gap: 20px; /* Espacement entre les boutons */
     margin-top: 60px;                
 }
 
@@ -73,6 +109,7 @@ button{
     margin-top: 70px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 100px;
     box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -94,38 +131,39 @@ button{
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0px 2px 28px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 100px;
 
 }
 
-#image {
+.image {
     width: 40%;
     margin-left: 20%;
     margin-right: 20%;
 }
 
 #home {
-    height: 30px;
+    height: 40px;
 }
 #home > img {
     height: 100%;
 }
 
 #person {
-    height: 30px;
+    height: 40px;
 }
 #person > img {
     height: 100%;
 }
 
 #tools {
-    height: 30px;
+    height: 40px;
 }
 #tools > img {
     height: 100%;
 }
 
 #phone {
-    height: 30px;
+    height: 40px;
 }
 #phone > img {
     height: 100%;
