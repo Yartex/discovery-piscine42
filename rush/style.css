@@ -1,0 +1,132 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+/*Header CV1 et 2*/
+#headerCV1{
+    display: none;
+    flex-direction: row;
+    position: fixed;
+    top: 5px;
+    z-index: 20;
+}
+
+#headerCV2{
+    display: none;
+    flex-direction: row;
+    position: fixed;
+    top: 5px;
+    z-index: 20;
+}
+
+/*Sommaire*/
+.sommaire {
+    background-image: url(sommaire.jpg);
+    background-size: cover;         /* L'image de fond couvre toute la section */
+    background-position: center;    /* Centrer l'image de fond */
+    background-attachment: fixed;   /* L'image de fond reste fixe lors du défilement */
+    height: 100vh;                   /* La section prend 100% de la hauteur de la fenêtre */
+    width: 100%;
+    text-align: center;
+    display: flex;                  /* Utilisation de flexbox pour centrer le contenu */
+    flex-direction: column;         /* Aligner les éléments enfants en colonne */
+    justify-content: flex-start;    /* Centrer verticalement les éléments en haut */
+    align-items: center;            /* Centrer horizontalement */
+    margin: 0;
+}
+
+#text  {
+    margin-top: 20px;
+}
+
+
+button{
+    display: inline-block;
+    margin: auto;
+    color: rgba(63, 63, 63, 0.87);
+    background-color: beige;
+    border-radius: 5px;
+}
+
+.buttons-position {
+    display: flex;
+    justify-content: center;        
+    gap: 20px;                      /* Espacement entre les boutons */
+    margin-top: 60px;                
+}
+
+/*CV Hugo*/
+
+#CV1 {
+    /*Cacher CV*/
+        display: none;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.2);
+}
+
+.moi {
+    width: 40%;
+    clip-path: ellipse(33% 50%);
+}
+
+.mail {
+    color: black;
+    text-decoration: none;
+}
+
+/*CV Alexian*/
+#CV2 {
+    /*Cacher CV*/
+        display: none;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 2px 28px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+#image {
+    width: 40%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#home {
+    height: 30px;
+}
+#home > img {
+    height: 100%;
+}
+
+#person {
+    height: 30px;
+}
+#person > img {
+    height: 100%;
+}
+
+#tools {
+    height: 30px;
+}
+#tools > img {
+    height: 100%;
+}
+
+#phone {
+    height: 30px;
+}
+#phone > img {
+    height: 100%;
+}
