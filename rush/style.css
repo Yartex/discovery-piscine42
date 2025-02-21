@@ -150,6 +150,7 @@ li {
     clip-path: ellipse(33% 50%);
 }
 
+/*Boutton header*/
 #home {
     height: 40px;
 }
@@ -178,6 +179,7 @@ li {
     height: 100%;
 }
 
+/*filtre header*/
 .filtre {
     width: 100%;
     height: 100vh;
